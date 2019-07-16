@@ -9,7 +9,7 @@ SAM_DIR := .aws-sam
 # Required environment variables (user must override)
 
 # S3 bucket used for packaging SAM templates
-PACKAGE_BUCKET ?= your-bucket-here
+PACKAGE_BUCKET ?= devops-poc-artifact
 
 # user can optionally override the following by setting environment variables with the same names before running make
 
