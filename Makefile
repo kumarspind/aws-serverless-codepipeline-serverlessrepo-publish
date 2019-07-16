@@ -12,8 +12,8 @@ TESTAPP_DIR := test/integration/testdata/
 # Required environment variables (user must override)
 
 # S3 bucket used for packaging SAM templates
-PACKAGE_BUCKET ?= aws-sar-publishing
-INTEG_TEST_BUCKET ?= codepipeline-sar-publish-integ-tests
+PACKAGE_BUCKET ?= idexceldemo-sam
+INTEG_TEST_BUCKET ?= devops-poc-artifact
 
 
 # user can optionally override the following by setting environment variables with the same names before running make
