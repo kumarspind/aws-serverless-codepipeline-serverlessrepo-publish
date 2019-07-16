@@ -24,7 +24,7 @@ PIP ?= pip
 AWS_DEFAULT_REGION ?= us-east-1
 
 # Stack name used when deploying the app for manual testing
-APP_STACK_NAME ?= arn:aws:cloudformation:us-east-1:546124439885:stack/qTest-Stack
+#APP_STACK_NAME ?= qTest-Stack
 # GitHub owner.
 GITHUB_OWNER ?= kumarspind
 # GitHub repo.
@@ -75,4 +75,4 @@ publish: package
 
 deploy: package
 	pipenv run sam package --template-file $(SAM_DIR)/app.yml --s3-bucket $(PACKAGE_BUCKET) --output-template-file $(SAM_DIR)/packaged-app.yml
-	pipenv run sam deploy --template-file $(SAM_DIR)/packaged-app.yml --stack-name $(APP_STACK_NAME) --capabilities CAPABILITY_IAM
+	pipenv run sam deploy --template-file $(SAM_DIR)/packaged-app.yml --stack-name qTest-Stack --capabilities CAPABILITY_IAM
