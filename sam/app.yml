@@ -30,8 +30,8 @@ Resources:
       Handler: handler.publish
       Runtime: python3.7
       Tracing: Active
-      MemorySize: 512
-      Timeout: 300
+      MemorySize: 1512
+      Timeout: 800
       Environment:
         Variables:
           LOG_LEVEL: !Ref LogLevel
