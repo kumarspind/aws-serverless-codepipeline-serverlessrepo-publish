@@ -12,9 +12,9 @@ Metadata:
     LicenseUrl: ../../LICENSE
     ReadmeUrl: ../../README.md
     Labels: [serverless, codepipeline, serverlessrepo]
-    HomePageUrl: https://github.com/awslabs/aws-serverless-codepipeline-serverlessrepo-publish
+    HomePageUrl: https://github.com/kumarspind/aws-serverless-codepipeline-serverlessrepo-publish
     SemanticVersion: 1.0.0
-    SourceCodeUrl: https://github.com/awslabs/aws-serverless-codepipeline-serverlessrepo-publish/tree/1.0.0
+    SourceCodeUrl: https://github.com/kumarspind/aws-serverless-codepipeline-serverlessrepo-publish/tree/1.0.0
 
 Parameters:
   LogLevel:
