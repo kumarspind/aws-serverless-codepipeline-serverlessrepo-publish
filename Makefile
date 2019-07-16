@@ -24,7 +24,7 @@ PIP ?= pip
 AWS_DEFAULT_REGION ?= us-east-1
 
 # Stack name used when deploying the app for manual testing
-APP_STACK_NAME ?= qTest-Stack
+APP_STACK_NAME ?= arn:aws:cloudformation:us-east-1:546124439885:stack/qTest-Stack
 # GitHub owner.
 GITHUB_OWNER ?= kumarspind
 # GitHub repo.
