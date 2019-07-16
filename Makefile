@@ -50,7 +50,8 @@ init:
 init-cicd:
 	pipenv run sam deploy --template-file $(TEMPLATE_DIR)/cicd.yml --stack-name $(CICD_STACK_NAME) --parameter-overrides GitHubOwner="$(GITHUB_OWNER)" GitHubRepo="$(GITHUB_REPO)" --capabilities CAPABILITY_IAM
 
-compile:kumarspind
+#compile:kumarspind
+compile:
 	pipenv run flake8 $(SRC_DIR) $(TEST_DIR)
 	pipenv run pydocstyle $(SRC_DIR)
 	pipenv run cfn-lint $(TEMPLATE_DIR)/app.yml
