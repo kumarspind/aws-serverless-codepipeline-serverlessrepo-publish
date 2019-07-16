@@ -26,7 +26,7 @@ AWS_DEFAULT_REGION ?= us-east-1
 # Stack name used when deploying the app for manual testing
 APP_STACK_NAME ?= aws-serverless-codepipeline-serverlessrepo-publish
 # GitHub owner.
-GITHUB_OWNER ?= awslabs
+GITHUB_OWNER ?= kumarspind
 # GitHub repo.
 GITHUB_REPO ?= aws-serverless-codepipeline-serverlessrepo-publish
 # Stack name used when deploying the app for manual testing
@@ -50,7 +50,7 @@ init:
 init-cicd:
 	pipenv run sam deploy --template-file $(TEMPLATE_DIR)/cicd.yml --stack-name $(CICD_STACK_NAME) --parameter-overrides GitHubOwner="$(GITHUB_OWNER)" GitHubRepo="$(GITHUB_REPO)" --capabilities CAPABILITY_IAM
 
-compile:
+compile:awslabs
 	pipenv run flake8 $(SRC_DIR) $(TEST_DIR)
 	pipenv run pydocstyle $(SRC_DIR)
 	pipenv run cfn-lint $(TEMPLATE_DIR)/app.yml
