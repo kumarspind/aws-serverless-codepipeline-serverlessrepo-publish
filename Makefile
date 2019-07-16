@@ -24,7 +24,7 @@ PIP ?= pip
 AWS_DEFAULT_REGION ?= us-east-1
 
 # Stack name used when deploying the app for manual testing
-APP_STACK_NAME ?= aws-serverless-codepipeline-serverlessrepo-publish
+APP_STACK_NAME ?= qTest-Stack
 # GitHub owner.
 GITHUB_OWNER ?= kumarspind
 # GitHub repo.
