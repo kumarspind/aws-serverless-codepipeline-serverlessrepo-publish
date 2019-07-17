@@ -74,5 +74,7 @@ publish: package
 	pipenv run sam publish --template $(SAM_DIR)/packaged-app.yml
 
 deploy: package
-	pipenv run sam package --template-file $(SAM_DIR)/app.yml --s3-bucket $(PACKAGE_BUCKET) --output-template-file $(SAM_DIR)/packaged-app.yml
-	pipenv run sam deploy --template-file $(SAM_DIR)/packaged-app.yml --stack-name qTest-Stack --capabilities CAPABILITY_IAM
+#	pipenv run sam package --template-file $(SAM_DIR)/app.yml --s3-bucket $(PACKAGE_BUCKET) --output-template-file $(SAM_DIR)/packaged-app.yml
+#	pipenv run sam deploy --template-file $(SAM_DIR)/packaged-app.yml --stack-name qTest-Stack --capabilities CAPABILITY_IAM
+	aws cloudformation package --template-file $(SAM_DIR)/app.yml --s3-bucket $(PACKAGE_BUCKET) --output-template-file $(SAM_DIR)/packaged-app.yml
+	aws cloudformation deploy --template-file $(SAM_DIR)/packaged-app.yml --stack-name qTest-Stack --region us-east-1 --capabilities CAPABILITY_IAM
