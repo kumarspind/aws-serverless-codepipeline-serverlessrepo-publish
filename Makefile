@@ -11,7 +11,7 @@ TESTAPP_DIR := test/integration/testdata/
 
 # Required environment variables (user must override)
 
-# S3 bucket used for packaging SAM templates
+# S3 bucket used for packaging SAM - templates
 PACKAGE_BUCKET ?= idexceldemo-sam
 #INTEG_TEST_BUCKET ?= devops-poc-artifact
 
