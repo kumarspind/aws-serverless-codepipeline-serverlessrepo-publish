@@ -22,7 +22,7 @@ PACKAGE_BUCKET ?= idexceldemo-sam
 PIP ?= pip
 # Default AWS CLI region
 AWS_DEFAULT_REGION ?= us-east-1
-
+#
 # Stack name used when deploying the app for manual testing
 #APP_STACK_NAME ?= qTest-Stack
 # GitHub owner.
