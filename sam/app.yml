@@ -4,21 +4,18 @@ Transform: 'AWS::Serverless-2016-10-31'
 Metadata:
   AWS::ServerlessRepo::Application:
     Name: aws-serverless-codepipeline-serverlessrepo-publish
-    Description: >-
-      This serverless application publishes applications to AWS Serverless Application Repository. This app creates
-      a Lambda function that a user could then use as an Invoke action target in their CodePipeline.
-    Author: AWS Serverless Application Repository
-    SpdxLicenseId: MIT
+    Description: Sample AWS Serverless Application Repository.
+    
     Labels: [serverless, codepipeline, serverlessrepo]
     HomePageUrl: https://github.com/kumarspind/aws-serverless-codepipeline-serverlessrepo-publish
     SemanticVersion: 1.0.0
     SourceCodeUrl: https://github.com/kumarspind/aws-serverless-codepipeline-serverlessrepo-publish/tree/1.0.0
 
-Parameters:
-  LogLevel:
-    Type: String
-    Description: Log level for Lambda function logging, e.g., ERROR, INFO, DEBUG, etc
-    Default: INFO
+#Parameters:
+#  LogLevel:
+#    Type: String
+#    Description: Log level for Lambda function logging, e.g., ERROR, INFO, DEBUG, etc
+#    Default: INFO
 
 Resources:
   ServerlessRepoPublish:
@@ -28,28 +25,28 @@ Resources:
       Handler: handler.publish
       Runtime: python3.7
       Tracing: Active
-      MemorySize: 1024
+      MemorySize: 512
       Timeout: 50
-      Environment:
-        Variables:
-          LOG_LEVEL: !Ref LogLevel
-      Policies:
-        - Version: '2012-10-17'
-          Statement:
-            - Effect: 'Allow'
-              Action:
-                - codepipeline:PutJobSuccessResult
-                - codepipeline:PutJobFailureResult
-              Resource: '*'
-        - Version: '2012-10-17'
-          Statement:
-            - Effect: 'Allow'
-              Action:
-                - serverlessrepo:CreateApplication
-                - serverlessrepo:CreateApplicationVersion
-                - serverlessrepo:UpdateApplication
-              Resource:
-                !Sub 'arn:${AWS::Partition}:serverlessrepo:${AWS::Region}:${AWS::AccountId}:applications/*'
+ #     Environment:
+ #       Variables:
+ #         LOG_LEVEL: !Ref LogLevel
+ #     Policies:
+ #       - Version: '2012-10-17'
+ #         Statement:
+ #           - Effect: 'Allow'
+ #             Action:
+ #               - codepipeline:PutJobSuccessResult
+ #               - codepipeline:PutJobFailureResult
+ #             Resource: '*'
+ #       - Version: '2012-10-17'
+ #         Statement:
+ #           - Effect: 'Allow'
+ #             Action:
+ #               - serverlessrepo:CreateApplication
+ #               - serverlessrepo:CreateApplicationVersion
+ #               - serverlessrepo:UpdateApplication
+ #             Resource:
+ #               !Sub 'arn:${AWS::Partition}:serverlessrepo:${AWS::Region}:${AWS::AccountId}:applications/*'
 
 Outputs:
   ServerlessRepoPublishFunctionName:
